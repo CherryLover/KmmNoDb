@@ -1,4 +1,4 @@
-package com.myapplication
+package com.cherry.kmm
 
 import MainView
 import android.os.Bundle
