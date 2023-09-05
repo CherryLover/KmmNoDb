@@ -36,3 +36,19 @@ android {
         jvmToolchain(11)
     }
 }
+
+dependencies {
+    implementation(libs.ktor.client.cio)
+    implementation(libs.kstore.file)
+    implementation(libs.androidx.compose.windowsizeclass)
+
+    implementation(compose.runtime)
+    implementation(compose.foundation)
+    implementation(compose.material3)
+    implementation(compose.preview)
+    implementation(compose.uiTooling)
+    implementation(libs.decompose)
+    implementation(libs.decompose.router)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.windowsizeclass)
+}

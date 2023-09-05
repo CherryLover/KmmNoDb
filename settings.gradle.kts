@@ -9,6 +9,7 @@ pluginManagement {
         mavenCentral()
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
     }
 
     plugins {
@@ -24,6 +25,9 @@ pluginManagement {
         id("com.android.library").version(agpVersion)
 
         id("org.jetbrains.compose").version(composeVersion)
+//        classpath(libs.buildkonfig.gradle.plugin)
+//        id(libs.buildkonfig.gradle.plugin).version("0.7.0")
+//        id("com.codingfeline.buildkonfig:buildkonfig-gradle-plugin").version("0.13.3")
     }
 }
 
@@ -32,5 +36,7 @@ dependencyResolutionManagement {
         mavenCentral()
         google()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
     }
 }

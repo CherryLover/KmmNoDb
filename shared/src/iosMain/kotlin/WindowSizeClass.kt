@@ -1,0 +1,1 @@
+actual typealias WindowSizeClass = CommonWindowSizeClass
