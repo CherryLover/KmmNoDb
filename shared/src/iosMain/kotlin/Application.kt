@@ -16,6 +16,7 @@ import com.arkivanov.essenty.backhandler.BackDispatcher
 import com.arkivanov.essenty.lifecycle.LifecycleRegistry
 import io.github.xxfast.decompose.LocalComponentContext
 import platform.UIKit.UIViewController
+import screen.HomeScreenUI
 
 @OptIn(ExperimentalDecomposeApi::class)
 fun Main(): UIViewController = ComposeUIViewController {

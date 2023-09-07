@@ -1,3 +1,6 @@
+package screen
+
+import HomeScreen
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.predictiveBackAnimation
@@ -8,6 +11,7 @@ import io.github.xxfast.decompose.LocalComponentContext
 import io.github.xxfast.decompose.router.Router
 import io.github.xxfast.decompose.router.content.RoutedContent
 import io.github.xxfast.decompose.router.rememberRouter
+import screen.feature.TokenPageScreen
 
 @OptIn(ExperimentalDecomposeApi::class)
 @Composable
@@ -23,9 +27,11 @@ fun HomeScreenUI() {
     ),
   ) { screen ->
     when (screen) {
-      HomeScreen.TokenPage -> TokenPageScreen {
+      HomeScreen.TokenPage -> TokenPageScreen({
         router.pop()
-      }
+      }, {
+      })
+
       else -> {
 
       }

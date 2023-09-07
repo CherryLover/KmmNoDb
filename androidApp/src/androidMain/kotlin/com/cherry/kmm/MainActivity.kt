@@ -1,6 +1,6 @@
 package com.cherry.kmm
 
-import HomeScreenUI
+import screen.HomeScreenUI
 import LocalWindowSizeClass
 import WindowSizeClass
 import android.os.Bundle
