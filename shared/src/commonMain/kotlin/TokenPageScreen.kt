@@ -2,7 +2,6 @@
  * @description
  * @author: Created jiangjiwei in 2023/9/5 11:56
  */
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 fun TokenPageScreen(
   onBack: () -> Unit,
 ) {
-  Scaffold(Modifier.fillMaxSize().background(Color.Red)) {
+  Scaffold(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize()) {
       Text(text = "TokenPageScreen-Top", color = Color.Blue)
       Spacer(Modifier.fillMaxWidth().weight(1f))

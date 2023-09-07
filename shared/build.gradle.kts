@@ -59,6 +59,15 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+              implementation(compose.runtime)
+              implementation(compose.foundation)
+              implementation(compose.material3)
+              implementation(compose.materialIconsExtended)
+              implementation(libs.decompose)
+              implementation(libs.decompose.compose.multiplatform)
+            }
         }
     }
 }
