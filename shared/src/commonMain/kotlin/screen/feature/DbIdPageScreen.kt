@@ -1,6 +1,5 @@
 package screen.feature
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -47,7 +46,9 @@ fun DbIdPageScreen(
         tint = MaterialTheme.colors.primary,
         modifier = Modifier
           .padding(8.dp)
-          .clickable { onBack() }
+          .clickable {
+
+          }
       )
       Text(
         "Database Id", color = MaterialTheme.colors.primary,

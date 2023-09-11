@@ -14,10 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import calculateWindowSizeClass
-import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.decompose.defaultComponentContext
 import io.github.xxfast.decompose.LocalComponentContext
-import screen.HomeScreenUI
+import screen.arch.DefaultRootRootComponent
+import screen.arch.RootComponent
 import screen.feature.DbIdPageScreen
 
 class MainActivity : AppCompatActivity() {
@@ -26,12 +26,13 @@ class MainActivity : AppCompatActivity() {
 
 
     WindowCompat.setDecorFitsSystemWindows(window, false)
-    val rootComponentContext: DefaultComponentContext = defaultComponentContext()
+//    val rootComponentContext: DefaultComponentContext = defaultComponentContext()
+    val root = DefaultRootRootComponent(defaultComponentContext())
 
     setContent {
       val windowSizeClass: WindowSizeClass = calculateWindowSizeClass(this)
       CompositionLocalProvider(
-        LocalComponentContext provides rootComponentContext,
+        LocalComponentContext provides root,
         LocalWindowSizeClass provides windowSizeClass,
       ) {
         NoDbTheme {
@@ -39,13 +40,14 @@ class MainActivity : AppCompatActivity() {
             modifier = Modifier.fillMaxSize()
               .systemBarsPadding(),
           ) {
-            HomeScreenUI()
+            RootComponent(root)
           }
         }
       }
     }
   }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun TestPreViewRoot() {
