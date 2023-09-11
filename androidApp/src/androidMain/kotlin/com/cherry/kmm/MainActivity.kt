@@ -1,6 +1,5 @@
 package com.cherry.kmm
 
-import screen.HomeScreenUI
 import LocalWindowSizeClass
 import WindowSizeClass
 import android.os.Bundle
@@ -9,13 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import calculateWindowSizeClass
 import com.arkivanov.decompose.DefaultComponentContext
 import com.arkivanov.decompose.defaultComponentContext
 import io.github.xxfast.decompose.LocalComponentContext
+import screen.HomeScreenUI
+import screen.feature.DbIdPageScreen
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,4 +45,11 @@ class MainActivity : AppCompatActivity() {
       }
     }
   }
+}
+@Preview(showBackground = true)
+@Composable
+fun TestPreViewRoot() {
+  DbIdPageScreen({}, {
+
+  })
 }

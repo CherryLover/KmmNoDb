@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.compose.ui:ui-tooling-preview")
+
     implementation(libs.ktor.client.cio)
     implementation(libs.kstore.file)
     implementation(libs.androidx.compose.windowsizeclass)
