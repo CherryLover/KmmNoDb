@@ -19,6 +19,7 @@ import io.github.xxfast.decompose.LocalComponentContext
 import screen.arch.DefaultRootRootComponent
 import screen.arch.RootComponent
 import screen.feature.DbIdPageScreen
+import screen.feature.DbIdViewModel
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 @Preview(showBackground = true)
 @Composable
 fun TestPreViewRoot() {
-  DbIdPageScreen({}, {
+  DbIdPageScreen(DbIdViewModel(), {}) {
 
-  })
+  }
 }

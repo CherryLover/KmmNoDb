@@ -25,7 +25,10 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slid
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.extensions.compose.jetbrains.subscribeAsState
 import com.arkivanov.decompose.router.stack.push
+import dev.icerock.moko.mvvm.compose.getViewModel
+import dev.icerock.moko.mvvm.compose.viewModelFactory
 import screen.feature.DbIdPageScreen
+import screen.feature.DbIdViewModel
 import screen.feature.TokenPageScreen
 import screen.router.HomeScreen
 
@@ -58,7 +61,8 @@ fun RootComponent(root: DefaultRootRootComponent) {
         }
 
         is DbRootComponent.Child.NbPageIdChild -> {
-          DbIdPageScreen({
+          val viewModel = getViewModel(Unit, viewModelFactory { DbIdViewModel() })
+          DbIdPageScreen(viewModel, {
             root.onBackClick()
           }, {
 

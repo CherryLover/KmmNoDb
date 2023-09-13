@@ -7,11 +7,14 @@ import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.slid
 import com.arkivanov.decompose.extensions.compose.jetbrains.stack.animation.stackAnimation
 import com.arkivanov.decompose.router.stack.pop
 import com.arkivanov.decompose.router.stack.push
+import dev.icerock.moko.mvvm.compose.getViewModel
+import dev.icerock.moko.mvvm.compose.viewModelFactory
 import io.github.xxfast.decompose.LocalComponentContext
 import io.github.xxfast.decompose.router.Router
 import io.github.xxfast.decompose.router.content.RoutedContent
 import io.github.xxfast.decompose.router.rememberRouter
 import screen.feature.DbIdPageScreen
+import screen.feature.DbIdViewModel
 import screen.feature.TokenPageScreen
 import screen.router.HomeScreen
 
@@ -36,11 +39,12 @@ fun HomeScreenUI() {
       })
 
       HomeScreen.DbIdPage -> {
-        DbIdPageScreen({
+        val viewModel = getViewModel(Unit, viewModelFactory { DbIdViewModel() })
+        DbIdPageScreen(viewModel, {
           router.pop()
-        }, {
+        }) {
 //          router.push(HomeScreen.TokenPage)
-        })
+        }
       }
 
       else -> {

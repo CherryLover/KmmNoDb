@@ -40,6 +40,9 @@ kotlin {
                 implementation("io.github.xxfast:decompose-router:$decomposeRouterVersion")
 //                implementation("io.github.xxfast:decompose-router-wear:$decomposeRouterVersion")
                 implementation("com.arkivanov.decompose:extensions-compose-jetbrains:$decomposeVersion")
+
+                api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
+                api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
             }
         }
         val androidMain by getting {
