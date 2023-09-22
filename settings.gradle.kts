@@ -2,6 +2,7 @@ rootProject.name = "KmmNoDb"
 
 include(":androidApp")
 include(":shared")
+include(":desktop")
 
 pluginManagement {
     repositories {

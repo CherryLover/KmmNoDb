@@ -9,6 +9,8 @@ plugins {
 kotlin {
     androidTarget()
 
+    jvm("desktop")
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -43,6 +45,8 @@ kotlin {
 
                 api("dev.icerock.moko:mvvm-core:0.16.1") // only ViewModel, EventsDispatcher, Dispatchers.UI
                 api("dev.icerock.moko:mvvm-compose:0.16.1") // api mvvm-core, getViewModel for Compose Multiplatfrom
+
+                implementation(libs.kotlinx.coroutines)
             }
         }
         val androidMain by getting {
@@ -52,6 +56,14 @@ kotlin {
                 api("androidx.core:core-ktx:1.10.1")
 
                 implementation(libs.androidx.compose.windowsizeclass)
+            }
+        }
+        val desktopMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.cio)
+                implementation(libs.kstore.file)
+
+                runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.7.3")
             }
         }
         val iosX64Main by getting
