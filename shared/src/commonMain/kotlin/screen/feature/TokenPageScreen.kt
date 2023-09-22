@@ -33,20 +33,7 @@ fun TokenPageScreen(
   onTokenSaved: (String) -> Unit = {}
 ) {
 
-  Scaffold(Modifier.fillMaxSize(), topBar = {
-    TopAppBar(
-      backgroundColor = Color.Transparent,
-      elevation = 0.dp,
-    ) {
-      Text(
-        "Token Page", color = MaterialTheme.colors.primary,
-        modifier = Modifier
-          .padding(horizontal = 20.dp)
-          .fillMaxWidth(),
-        fontSize = MaterialTheme.typography.h6.fontSize
-      )
-    }
-  }) {
+  Scaffold(Modifier.fillMaxSize()) {
     Column(
       Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
       horizontalAlignment = Alignment.CenterHorizontally

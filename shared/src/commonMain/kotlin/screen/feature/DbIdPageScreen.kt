@@ -41,28 +41,7 @@ import screen.arch.UiStateEnum
 fun DbIdPageScreen(
   viewModel: DbIdViewModel, onBack: () -> Unit, onDbIdSaved: (String) -> Unit = {}
 ) {
-  Scaffold(Modifier.fillMaxSize(), topBar = {
-    TopAppBar(
-      backgroundColor = Color.Transparent,
-      elevation = 0.dp,
-    ) {
-      Icon(
-        imageVector = Icons.Default.ArrowBack,
-        contentDescription = "back",
-        tint = MaterialTheme.colors.primary,
-        modifier = Modifier
-          .padding(8.dp)
-          .clickable {
-
-          }
-      )
-      Text(
-        "Database Id", color = MaterialTheme.colors.primary,
-        modifier = Modifier.padding(start = 10.dp).fillMaxWidth().padding(end = 10.dp),
-        fontSize = MaterialTheme.typography.h6.fontSize
-      )
-    }
-  }) {
+  Scaffold(Modifier.fillMaxSize()) {
     Column(
       Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
       horizontalAlignment = Alignment.CenterHorizontally
