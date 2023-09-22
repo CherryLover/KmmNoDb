@@ -32,7 +32,7 @@ fun main() {
 
 
     Window(
-      title = "The New York Times",
+      title = "KmmNoDb",
       state = windowState,
       onCloseRequest = { exitApplication() }
     ) {

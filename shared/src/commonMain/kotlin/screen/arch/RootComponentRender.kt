@@ -104,7 +104,7 @@ fun DbToolbar(instance: DbRootComponent.Child, hasBack: Boolean, onBack: () -> U
     }
     val modifier = if (hasBack) Modifier.padding(start = 10.dp) else Modifier.padding(horizontal = 20.dp)
     Text(
-      "${pageTitle}-Debug", color = MaterialTheme.colors.primary,
+      "${pageTitle}", color = MaterialTheme.colors.primary,
       modifier = modifier.fillMaxWidth(),
       fontSize = MaterialTheme.typography.h6.fontSize
     )
